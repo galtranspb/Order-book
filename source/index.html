@@ -12,9 +12,9 @@
 <body>
 
   <div class="order">
-    <div class="order__wrapper">
+    <div class="order__header-wrapper">
       <h2 class="order__title">Order Book</h2>
-      <a class="help-info" href="help-info.html">
+      <a class="help-info order__help-info" href="#">
         <span class="visually-hidden">Справочная информация</span>
       </a>
       <div class="settings">
@@ -28,42 +28,68 @@
         </ul>
       </div>
     </div>
-    <table class="order__table order__table--bids" aria-label="Таблица предложений">
-      <thead>
-        <tr class="order__th">
-          <td class="order__td">Count</td>
-          <td class="order__td">Total</td>
-          <td class="order__td">Amount</td>
-          <td class="order__td">Price</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="oreder__tr">
-          <td class="order__td">3</td>
-          <td class="order__td">4.76926</td>
-          <td class="order__td">4.76926</td>
-          <td class="order__td">6074.60</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="order__table order__table--asks" aria-label="Таблица спроса">
-      <thead>
-        <tr class="order__th">
-          <td class="order__td">Price</td>
-          <td class="order__td">Amount</td>
-          <td class="order__td">Total</td>
-          <td class="order__td">Count</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="oreder__tr">
-          <td class="order__td">6074.90</td>
-          <td class="order__td">3.33099</td>
-          <td class="order__td">3.33099</td>
-          <td class="order__td">1</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="order__table-wrapper">
+      <table class="order__table order__table--bids" aria-label="Таблица предложений">
+        <thead class="order__thead">
+          <tr>
+            <td class="order__td order__td--bids order__td--first-column">Count</td>
+            <td class="order__td order__td--bids order__td--second-column">Total</td>
+            <td class="order__td order__td--bids order__td--thrid column">Amount</td>
+            <td class="order__td order__td--bids order__td--fourth-column">Price</td>
+          </tr>
+        </thead>
+        <tbody class="order__tbody">
+          <tr class="order__tr">
+            <td class="order__td order__td--bids order__td--first-column">3</td>
+            <td class="order__td order__td--bids order__td--second-column">4.76926</td>
+            <td class="order__td order__td--bids order__td--thrid column">4.76926</td>
+            <td class="order__td order__td--bids order__td--fourth-column">6074.60</td>
+          </tr>
+          <tr class="order__tr">
+            <td class="order__td order__td--bids order__td--first-column">3</td>
+            <td class="order__td order__td--bids order__td--second-column">4.76926</td>
+            <td class="order__td order__td--bids order__td--thrid column">4.76926</td>
+            <td class="order__td order__td--bids order__td--fourth-column">6074.60</td>
+          </tr>
+          <tr class="order__tr">
+            <td class="order__td order__td--bids order__td--first-column">3</td>
+            <td class="order__td order__td--bids order__td--second-column">4.76926</td>
+            <td class="order__td order__td--bids order__td--thrid column">4.76926</td>
+            <td class="order__td order__td--bids order__td--fourth-column">6074.60</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="order__table order__table--asks" aria-label="Таблица спроса">
+        <thead class="order__thead">
+          <tr>
+            <td class="order__td order__td--asks order__td--first-column">Price</td>
+            <td class="order__td order__td--asks order__td--second-column">Amount</td>
+            <td class="order__td order__td--asks order__td--thrid column">Total</td>
+            <td class="order__td order__td--asks order__td--fourth-column">Count</td>
+          </tr>
+        </thead>
+        <tbody class="order__tbody">
+          <tr class="order__tr">
+            <td class="order__td order__td--asks order__td--first-column">6074.90</td>
+            <td class="order__td order__td--asks order__td--second-column">3.33099</td>
+            <td class="order__td order__td--asks order__td--thrid column">3.33099</td>
+            <td class="order__td order__td--asks order__td--fourth-column">1</td>
+          </tr>
+          <tr class="order__tr">
+            <td class="order__td order__td--asks order__td--first-column">6074.90</td>
+            <td class="order__td order__td--asks order__td--second-column">3.33099</td>
+            <td class="order__td order__td--asks order__td--thrid column">3.33099</td>
+            <td class="order__td order__td--asks order__td--fourth-column">1</td>
+          </tr>
+          <tr class="order__tr">
+            <td class="order__td order__td--asks order__td--first-column">6074.90</td>
+            <td class="order__td order__td--asks order__td--second-column">3.33099</td>
+            <td class="order__td order__td--asks order__td--thrid column">3.33099</td>
+            <td class="order__td order__td--asks order__td--fourth-column">1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </body>
 

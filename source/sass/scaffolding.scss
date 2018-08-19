@@ -1,5 +1,6 @@
 body {
   min-width: 900px;
+  max-width: 1920px;
   padding: 0 20px;
 
   font-weight: normal;
@@ -9,8 +10,6 @@ body {
   color: $primery-color;
 
   background-color: $bg-color;
-
-  outline: 1px solid red;
 }
 
 .visually-hidden {
@@ -19,8 +18,8 @@ body {
   height: 1px;
   margin: -1px;
   padding: 0;
-  border: 0;
 
+  border: 0;
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
