@@ -1,1 +1,21 @@
-// блок настроек
+.settings__button {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+
+  vertical-align: middle;
+
+  background-color: $bg-color;
+  background-image: url("../img/icon-settings.svg");
+
+  border: 2px solid #eeeeee;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.settings__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
