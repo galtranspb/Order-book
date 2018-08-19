@@ -4,7 +4,6 @@ var gulp = require("gulp");
 var sass = require("gulp-sass");
 var del = require("del");
 var plumber = require("gulp-plumber");
-var posthtml = require("gulp-posthtml");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var minify = require("gulp-csso");
@@ -13,7 +12,6 @@ var server = require("browser-sync").create();
 var run = require("run-sequence");
 var htmlmin = require("gulp-htmlmin");
 var uglify = require("gulp-uglify");
-var pump = require("pump");
 
 gulp.task ("clean", function () {
   return del("build");

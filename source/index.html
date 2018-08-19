@@ -10,16 +10,61 @@
 </head>
 
 <body>
-  <header class="main-header">
-  </header>
 
-  <main>
-    <h2>Проверка</h2>
-  </main>
-
-  <footer class="main-footer">
-  </footer>
-
+  <div class="order">
+    <div class="order__wrapper">
+      <h2 class="order__title">Order Book</h2>
+      <a class="help-info" href="help-info.html">
+        <span class="visually-hidden">Справочная информация</span>
+      </a>
+      <div class="settings">
+        <button class="settings__button">
+          <span class="vissualy-hidden">Открыть меню настроек</span>
+        </button>
+        <ul class="settings__list" aria-label="Меню настроек">
+          <li class="settings__item">
+            <!-- Пункты меню настроек -->
+          </li>
+        </ul>
+      </div>
+    </div>
+    <table class="order__table order__table--bids" aria-label="Таблица предложений">
+      <thead>
+        <tr class="order__th">
+          <td class="order__td">Count</td>
+          <td class="order__td">Total</td>
+          <td class="order__td">Amount</td>
+          <td class="order__td">Price</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="oreder__tr">
+          <td class="order__td">3</td>
+          <td class="order__td">4.76926</td>
+          <td class="order__td">4.76926</td>
+          <td class="order__td">6074.60</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="order__table order__table--asks" aria-label="Таблица спроса">
+      <thead>
+        <tr class="order__th">
+          <td class="order__td">Price</td>
+          <td class="order__td">Amount</td>
+          <td class="order__td">Total</td>
+          <td class="order__td">Count</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="oreder__tr">
+          <td class="order__td">6074.90</td>
+          <td class="order__td">3.33099</td>
+          <td class="order__td">3.33099</td>
+          <td class="order__td">1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 
 </html>
