@@ -50,19 +50,34 @@ var bidsTable = document.querySelector('.order__tbody--bids'),
   asksTable = document.querySelector('.order__tbody--asks'),
   rowTemplate = document.querySelector('.row-template').content.querySelector('.order__tr');
 
-var getRow = function (obj, value) {
+var getRow = function (obj, prevSum, value) {
   var rowElement = rowTemplate.cloneNode(true);
   var count = rowElement.querySelector('.order__td--first-column'),
     total = rowElement.querySelector('.order__td--second-column'),
     amount = rowElement.querySelector('.order__td--thrid-column'),
     price = rowElement.querySelector('.order__td--fourth-column');
 
+  rowElement.style = 'background-image: linear-gradient(to left, lightgreen ' + value + ', white ' + value + ');';
   count.textContent = obj.numberOfOrders;
-  total.textContent = obj.quantity + value;
+  total.textContent = obj.quantity + prevSum;
   amount.textContent = obj.quantity;
   price.textContent = obj.price;
 
   return rowElement;
+};
+
+var getMaxTotal = function (htmlCollection) {
+  var arr = [];
+
+  Array.from(htmlCollection).forEach(function (el) {
+    arr.push(el.quantity);
+  });
+
+  var maxTotal = arr.reduce(function (sum, current) {
+    return sum + current;
+  }, 0);
+
+  return maxTotal;
 };
 
 var renderTable = function (htmlCollection) {
@@ -70,7 +85,8 @@ var renderTable = function (htmlCollection) {
   var fragment = document.createDocumentFragment();
 
   Array.from(htmlCollection).forEach(function (el) {
-    fragment.appendChild(getRow(el, prevAmount));
+    var lgr = 100 * prevAmount / getMaxTotal(data.asks) + '%';
+    fragment.appendChild(getRow(el, prevAmount, lgr));
     prevAmount += el.quantity;
   })
 
