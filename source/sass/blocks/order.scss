@@ -1,4 +1,6 @@
 .order {
+  max-width: 1920px;
+  margin: 0 auto;
   padding: 30px;
 
   border: 10px solid $border-color;
@@ -7,7 +9,6 @@
 .order__header-wrapper {
   display: flex;
   align-items: center;
-  width: 100%;
 }
 
 .order__help-info {
@@ -42,13 +43,21 @@
 
 .order__table-wrapper {
   display: flex;
+  width: 100%;
 }
 
 .order__table {
   width: 50%;
 
   border-collapse: collapse;
-  overflow-y: auto;
+
+  &:first-child {
+    margin-left: auto;
+  }
+
+  &:last-child {
+    margin-right: auto;
+  }
 }
 
 .order__thead {
@@ -72,6 +81,7 @@
 }
 
 .order__th {
+  width: 12.5%;
   padding: 12px 17px;
 
   &:last-child {
@@ -80,6 +90,7 @@
 }
 
 .order__td {
+  width: 12.5%;
   padding: 7px 17px;
 
   &:last-child {
