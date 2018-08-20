@@ -71,8 +71,16 @@
   }
 }
 
-.order__td {
+.order__th {
   padding: 12px 17px;
+
+  &:last-child {
+    text-align: right;
+  }
+}
+
+.order__td {
+  padding: 7px 17px;
 
   &:last-child {
     text-align: right;

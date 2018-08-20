@@ -105,6 +105,17 @@ var getMaxTotal = function (htmlCollection) {
   return maxTotal;
 };
 
+var reverseCollection = function (obj) {
+  var arr = Array.from(obj.children).reverse();
+
+  obj.removeChild(obj.firstChild);
+  arr.forEach(function (el) {
+    obj.appendChild(el);
+  });
+
+  return obj;
+};
+
 var renderTable = function (htmlCollection, table) {
   var prevAmount = 0;
   var fragment = document.createDocumentFragment();
@@ -112,7 +123,12 @@ var renderTable = function (htmlCollection, table) {
   Array.from(htmlCollection).forEach(function (el) {
     var lgr = 100 * (prevAmount + el.quantity) / getMaxTotal(htmlCollection) + '%';
     var row = getRow(el, prevAmount);
-    row.style = 'background-image: linear-gradient(to left, lightgreen ' + lgr + ', white ' + lgr + ');';
+
+    row.style = 'background-image: linear-gradient(to left, #d3f8d3 ' + lgr + ', white ' + lgr + ');';
+    if (table === asksTable) {
+      reverseCollection(row);
+      row.style = 'background-image: linear-gradient(to right, #ffe6ea ' + lgr + ', white ' + lgr + ');';
+    }
     fragment.appendChild(row);
     prevAmount += el.quantity;
   })
