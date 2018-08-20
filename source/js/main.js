@@ -46,6 +46,36 @@ var data = {
   }]
 }
 
+// загрузка данных
+
+// var URL = 'C:/Users/Anatoly/Documents/Web/Order book/data.json';
+
+// var upload = function (onSuccess, onError) {
+//   var xhr = new XMLHttpRequest();
+//   xhr.responseType = 'json';
+
+//   xhr.addEventListener('load', function () {
+//     if (xhr.status === 200) {
+//       onSuccess(xhr.response);
+//     } else {
+//       onError('Статус ответа: ' + xhr.status + ' ' + xhr.statusText);
+//     }
+//   });
+//   xhr.addEventListener('error', function () {
+//     onError('Произошла ошибка соединения');
+//   });
+//   xhr.addEventListener('timeout', function () {
+//     onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
+//   });
+
+//   xhr.timeout = 10000;
+
+//   xhr.open('GET', URL);
+//   xhr.send();
+// };
+
+// Генерация и отрисовка таблиц
+
 var bidsTable = document.querySelector('.order__tbody--bids'),
   asksTable = document.querySelector('.order__tbody--asks'),
   rowTemplate = document.querySelector('.row-template').content.querySelector('.order__tr');
@@ -85,7 +115,7 @@ var renderTable = function (htmlCollection) {
   var fragment = document.createDocumentFragment();
 
   Array.from(htmlCollection).forEach(function (el) {
-    var lgr = 100 * prevAmount / getMaxTotal(data.asks) + '%';
+    var lgr = 100 * (prevAmount + el.quantity) / getMaxTotal(data.asks) + '%';
     fragment.appendChild(getRow(el, prevAmount, lgr));
     prevAmount += el.quantity;
   })
@@ -94,3 +124,13 @@ var renderTable = function (htmlCollection) {
 }
 
 renderTable(data.asks);
+
+// var onSuccessUpload = function (data) {
+//   renderTable(data.asks);
+// };
+
+// var onErrorLoad = function (errormessage) {
+//   alert(errormessage);
+// };
+
+// upload(onSuccessUpload, onErrorLoad);
