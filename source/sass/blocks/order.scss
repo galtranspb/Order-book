@@ -74,7 +74,7 @@
 .order__td {
   padding: 12px 17px;
 
-  &--fourth-column {
+  &:last-child {
     text-align: right;
   }
 }

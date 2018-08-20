@@ -80,18 +80,13 @@ var bidsTable = document.querySelector('.order__tbody--bids'),
   asksTable = document.querySelector('.order__tbody--asks'),
   rowTemplate = document.querySelector('.row-template').content.querySelector('.order__tr');
 
-var getRow = function (obj, prevSum, value) {
+var getRow = function (obj, prevSum) {
   var rowElement = rowTemplate.cloneNode(true);
-  var count = rowElement.querySelector('.order__td--first-column'),
-    total = rowElement.querySelector('.order__td--second-column'),
-    amount = rowElement.querySelector('.order__td--thrid-column'),
-    price = rowElement.querySelector('.order__td--fourth-column');
 
-  rowElement.style = 'background-image: linear-gradient(to left, lightgreen ' + value + ', white ' + value + ');';
-  count.textContent = obj.numberOfOrders;
-  total.textContent = obj.quantity + prevSum;
-  amount.textContent = obj.quantity;
-  price.textContent = obj.price;
+  rowElement.children[0].textContent = obj.numberOfOrders;
+  rowElement.children[1].textContent = obj.quantity + prevSum;
+  rowElement.children[2].textContent = obj.quantity;
+  rowElement.children[3].textContent = obj.price;
 
   return rowElement;
 };
@@ -110,20 +105,23 @@ var getMaxTotal = function (htmlCollection) {
   return maxTotal;
 };
 
-var renderTable = function (htmlCollection) {
+var renderTable = function (htmlCollection, table) {
   var prevAmount = 0;
   var fragment = document.createDocumentFragment();
 
   Array.from(htmlCollection).forEach(function (el) {
-    var lgr = 100 * (prevAmount + el.quantity) / getMaxTotal(data.asks) + '%';
-    fragment.appendChild(getRow(el, prevAmount, lgr));
+    var lgr = 100 * (prevAmount + el.quantity) / getMaxTotal(htmlCollection) + '%';
+    var row = getRow(el, prevAmount);
+    row.style = 'background-image: linear-gradient(to left, lightgreen ' + lgr + ', white ' + lgr + ');';
+    fragment.appendChild(row);
     prevAmount += el.quantity;
   })
 
-  bidsTable.appendChild(fragment);
+  table.appendChild(fragment);
 }
 
-renderTable(data.asks);
+renderTable(data.bids, bidsTable);
+renderTable(data.asks, asksTable);
 
 // var onSuccessUpload = function (data) {
 //   renderTable(data.asks);
