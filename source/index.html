@@ -6,7 +6,7 @@
   <title>Order book</title>
   <meta name="keywords" content="<Биткоин, BTC, USD">
   <meta name="description" content="Обмен биткоинов на USD">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
@@ -29,68 +29,46 @@
       </div>
     </div>
     <div class="order__table-wrapper">
-      <table class="order__table order__table--bids" aria-label="Таблица предложений">
+      <table class="order__table" aria-label="Таблица предложений">
         <thead class="order__thead">
           <tr>
-            <td class="order__td order__td--bids order__td--first-column">Count</td>
-            <td class="order__td order__td--bids order__td--second-column">Total</td>
-            <td class="order__td order__td--bids order__td--thrid column">Amount</td>
-            <td class="order__td order__td--bids order__td--fourth-column">Price</td>
+            <td class="order__th">Count</td>
+            <td class="order__th">Total</td>
+            <td class="order__th">Amount</td>
+            <td class="order__th">Price</td>
           </tr>
         </thead>
-        <tbody class="order__tbody">
-          <tr class="order__tr">
-            <td class="order__td order__td--bids order__td--first-column">3</td>
-            <td class="order__td order__td--bids order__td--second-column">4.76926</td>
-            <td class="order__td order__td--bids order__td--thrid column">4.76926</td>
-            <td class="order__td order__td--bids order__td--fourth-column">6074.60</td>
-          </tr>
-          <tr class="order__tr">
-            <td class="order__td order__td--bids order__td--first-column">3</td>
-            <td class="order__td order__td--bids order__td--second-column">4.76926</td>
-            <td class="order__td order__td--bids order__td--thrid column">4.76926</td>
-            <td class="order__td order__td--bids order__td--fourth-column">6074.60</td>
-          </tr>
-          <tr class="order__tr">
-            <td class="order__td order__td--bids order__td--first-column">3</td>
-            <td class="order__td order__td--bids order__td--second-column">4.76926</td>
-            <td class="order__td order__td--bids order__td--thrid column">4.76926</td>
-            <td class="order__td order__td--bids order__td--fourth-column">6074.60</td>
-          </tr>
+        <tbody class="order__tbody order__tbody--bids">
         </tbody>
       </table>
-      <table class="order__table order__table--asks" aria-label="Таблица спроса">
+      <table class="order__table" aria-label="Таблица спроса">
         <thead class="order__thead">
           <tr>
-            <td class="order__td order__td--asks order__td--first-column">Price</td>
-            <td class="order__td order__td--asks order__td--second-column">Amount</td>
-            <td class="order__td order__td--asks order__td--thrid column">Total</td>
-            <td class="order__td order__td--asks order__td--fourth-column">Count</td>
+            <td class="order__th">Price</td>
+            <td class="order__th">Amount</td>
+            <td class="order__th">Total</td>
+            <td class="order__th">Count</td>
           </tr>
         </thead>
-        <tbody class="order__tbody">
-          <tr class="order__tr">
-            <td class="order__td order__td--asks order__td--first-column">6074.90</td>
-            <td class="order__td order__td--asks order__td--second-column">3.33099</td>
-            <td class="order__td order__td--asks order__td--thrid column">3.33099</td>
-            <td class="order__td order__td--asks order__td--fourth-column">1</td>
-          </tr>
-          <tr class="order__tr">
-            <td class="order__td order__td--asks order__td--first-column">6074.90</td>
-            <td class="order__td order__td--asks order__td--second-column">3.33099</td>
-            <td class="order__td order__td--asks order__td--thrid column">3.33099</td>
-            <td class="order__td order__td--asks order__td--fourth-column">1</td>
-          </tr>
-          <tr class="order__tr">
-            <td class="order__td order__td--asks order__td--first-column">6074.90</td>
-            <td class="order__td order__td--asks order__td--second-column">3.33099</td>
-            <td class="order__td order__td--asks order__td--thrid column">3.33099</td>
-            <td class="order__td order__td--asks order__td--fourth-column">1</td>
-          </tr>
+        <tbody class="order__tbody order__tbody--asks">
         </tbody>
       </table>
     </div>
   </div>
+
+  <template class="row-template">
+    <tr class="order__tr">
+      <td class="order__td"></td>
+      <td class="order__td"></td>
+      <td class="order__td"></td>
+      <td class="order__td"></td>
+    </tr>
+  </template>
+
+  <script src="js/data.min.js"></script>
+  <script src="js/upload.min.js"></script>
+  <script src="js/renderTable.min.js"></script>
+
 </body>
 
 </html>
