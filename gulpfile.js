@@ -48,9 +48,9 @@ gulp.task("html", function () {
 })
 
 gulp.task("compress", function () {
-    gulp.src("source/js/main.js")
+  gulp.src("source/js/*.js")
     .pipe(uglify())
-    .pipe(rename("main.min.js"))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest("build/js/"));
 })
 
@@ -76,4 +76,5 @@ gulp.task("serve", function() {
 
   gulp.watch("source/sass/**/*.{scss,sass}", ["style"]);
   gulp.watch("source/*.html", ["html"]);
+  gulp.watch("source/js/*.js");
 });
