@@ -32,6 +32,12 @@ gulp.task("style", function () {
   gulp.src("source/sass/style.scss")
   .pipe(plumber())
   .pipe(sass())
+})
+
+gulp.task("style", function () {
+  gulp.src("source/sass/style.scss")
+  .pipe(plumber())
+  .pipe(sass())
   .pipe(postcss([
     autoprefixer()
   ]))
