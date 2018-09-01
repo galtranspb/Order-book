@@ -16,10 +16,10 @@
     return rowElement;
   };
 
-  var getMaxTotal = function (htmlCollection) {
+  var getMaxTotal = function (list) {
     var arr = [];
 
-    Array.from(htmlCollection).forEach(function (el) {
+    Array.from(list).forEach(function (el) {
       arr.push(el.quantity);
     });
 
