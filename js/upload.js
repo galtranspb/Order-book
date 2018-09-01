@@ -2,7 +2,7 @@
 
 (function () {
 
-var URL = 'C:/Users/Anatoly/Documents/Web/Order book/data.json';
+var URL = '';
 
 window.upload = function (onSuccess, onError) {
   var xhr = new XMLHttpRequest();
