@@ -30,7 +30,7 @@
     return maxTotal;
   };
 
-  var reverseCollection = function (obj) {
+  var reverseRow = function (obj) {
     var arr = Array.from(obj.children).reverse();
 
     obj.removeChild(obj.firstChild);
@@ -41,18 +41,18 @@
     return obj;
   };
 
-  var renderTable = function (htmlCollection, table) {
+  var renderTable = function (arr, table) {
     var prevAmount = 0;
     var fragment = document.createDocumentFragment();
 
-    Array.from(htmlCollection).forEach(function (el) {
-      var lgr = 100 * (prevAmount + el.quantity) / getMaxTotal(htmlCollection) + '%';
+    arr.forEach(function (el) {
+      var colorStop = 100 * (prevAmount + el.quantity) / getMaxTotal(arr) + '%';
       var row = getRow(el, prevAmount);
 
-      row.style = 'background-image: linear-gradient(to left, #d3f8d3 ' + lgr + ', white ' + lgr + ');';
+      row.style = 'background-image: linear-gradient(to left, #d3f8d3 ' + colorStop + ', white ' + colorStop + ');';
       if (table === asksTable) {
-        reverseCollection(row);
-        row.style = 'background-image: linear-gradient(to right, #ffe6ea ' + lgr + ', white ' + lgr + ');';
+        reverseRow(row);
+        row.style = 'background-image: linear-gradient(to right, #ffe6ea ' + colorStop + ', white ' + colorStop + ');';
       }
       fragment.appendChild(row);
       prevAmount += el.quantity;

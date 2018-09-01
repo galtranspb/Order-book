@@ -6,7 +6,7 @@
   <title>Order book</title>
   <meta name="keywords" content="<Биткоин, BTC, USD">
   <meta name="description" content="Обмен биткоинов на USD">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
@@ -28,30 +28,29 @@
         </ul>
       </div>
     </div>
+
     <div class="order__table-wrapper">
       <table class="order__table" aria-label="Таблица предложений">
         <thead class="order__thead">
-          <tr>
-            <td class="order__th">Count</td>
-            <td class="order__th">Total</td>
-            <td class="order__th">Amount</td>
-            <td class="order__th">Price</td>
+          <tr class="order__header-row">
+            <td class="order__td order__td--header order__td--count">Count</td>
+            <td class="order__td order__td--header order__td--total">Total</td>
+            <td class="order__td order__td--header order__td--amount">Amount</td>
+            <td class="order__td order__td--header order__td--price">Price</td>
           </tr>
         </thead>
-        <tbody class="order__tbody order__tbody--bids">
-        </tbody>
+        <tbody class="order__tbody order__tbody--bids"></tbody>
       </table>
       <table class="order__table" aria-label="Таблица спроса">
         <thead class="order__thead">
-          <tr>
-            <td class="order__th">Price</td>
-            <td class="order__th">Amount</td>
-            <td class="order__th">Total</td>
-            <td class="order__th">Count</td>
+          <tr class="order__header-row">
+            <td class="order__td order__td--header order__td--price">Price</td>
+            <td class="order__td order__td--header order__td--amount">Amount</td>
+            <td class="order__td order__td--header order__td--total">Total</td>
+            <td class="order__td order__td--header order__td--count">Count</td>
           </tr>
         </thead>
-        <tbody class="order__tbody order__tbody--asks">
-        </tbody>
+        <tbody class="order__tbody order__tbody--asks"></tbody>
       </table>
     </div>
   </div>
@@ -65,9 +64,9 @@
     </tr>
   </template>
 
-  <script src="js/data.js"></script>
-  <script src="js/upload.js"></script>
-  <script src="js/renderTable.js"></script>
+  <script src="js/data.min.js"></script>
+  <script src="js/upload.min.js"></script>
+  <script src="js/renderTable.min.js"></script>
 
 </body>
 

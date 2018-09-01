@@ -30,7 +30,7 @@
     return maxTotal;
   };
 
-  var reverseCollection = function (obj) {
+  var reverseRow = function (obj) {
     var arr = Array.from(obj.children).reverse();
 
     obj.removeChild(obj.firstChild);
@@ -51,7 +51,7 @@
 
       row.style = 'background-image: linear-gradient(to left, #d3f8d3 ' + colorStop + ', white ' + colorStop + ');';
       if (table === asksTable) {
-        reverseCollection(row);
+        reverseRow(row);
         row.style = 'background-image: linear-gradient(to right, #ffe6ea ' + colorStop + ', white ' + colorStop + ');';
       }
       fragment.appendChild(row);
