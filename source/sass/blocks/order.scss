@@ -1,9 +1,12 @@
 .order {
   max-width: 1920px;
+  height: 100vh;
   margin: 0 auto;
   padding: 30px;
 
   border: 10px solid $border-color;
+
+  overflow: hidden;
 }
 
 .order__header-wrapper {
